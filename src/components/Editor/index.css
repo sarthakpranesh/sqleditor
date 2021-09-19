@@ -1,0 +1,33 @@
+.editorWrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #f9f4e1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+.editorLineNumber {
+  width: 40px;
+  background-color: #ba5353;
+}
+
+.editorTextareaLined {
+  text-align: center;
+  height: 40px;
+}
+
+.editorTextarea {
+  margin: 0px !important;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  line-height: 34.12px !important;
+  font-size: 18px !important;
+  padding: 0px;
+  overflow: hidden;
+  resize: none;
+}

@@ -5,17 +5,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #FDEAF0;
-}
-
-.sideNav {
-  width: 200px !important;
 }
 
 .sqlCommandEditor {
-  width: 600px !important;
+  border-right: 1px black solid;
 }
 
 .dataViewer {
-  width: 600px !important;
 }

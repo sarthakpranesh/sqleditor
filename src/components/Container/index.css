@@ -1,15 +1,8 @@
 .containerStyle {
-  background-color: #F9F4E1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  width: 90vh;
-
-  border: 2px solid #B9ADAD;
-  box-sizing: border-box;
-  border-radius: 8px;
-  margin: 4px;
-  padding: 4px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100vh;
+  width: 50vw;
 }
