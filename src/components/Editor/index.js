@@ -1,6 +1,17 @@
+import * as React from "react";
+
 import "./index.css";
+import formatQuery from "../../services/SQL/formatQuery";
 
 const Editor = () => {
+  const [query, setQuery] = React.useState("");
+
+  const onQueryChange = (e) => {
+    const unformattedQuery = e.target.value;
+    const q = formatQuery(unformattedQuery);
+    setQuery(q);
+  }
+
   return (
     <div className="editorWrapper">
       <div className="editorLineNumber">
@@ -23,6 +34,8 @@ const Editor = () => {
         style={{
           paddingLeft: 10,
         }}
+        onChange={onQueryChange}
+        value={query}
       >
 
       </textarea>
