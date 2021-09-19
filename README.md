@@ -1,6 +1,6 @@
 # Sql Editor
 
-Sql commands on the go
+Sql commands on the go. What is this? Just an assignment from Atlan. Thoughts while making this? Design inspirations from Microsoft Teams, should be simple but should expose the whole power of SQL. Best way a text editor like interface for writing SQL queries. Text editor should be user friendly and have features like auto formatting (SQL keyword capitalization, etc), query check, and other features. History section for queries already executed and settings to control SQL database connection, profile, app theme, etc.
 
 <br />
 
@@ -28,6 +28,3 @@ Make sure you have `Nodejs` installed
 - `yarn start`
 
 <br />
-
-## Issues
-For bugs/feature requests/discussions open a issue [here](https://github.com/sarthakpranesh/sqleditor/issues)
