@@ -8,9 +8,19 @@
   overflow-y: hidden;
 }
 
-.sqlCommandEditor {
-  border-right: 1px black solid;
+.sideNav {
+  width: 4vw !important;
+  background-color: #00A19D;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: stretch !important;
+  align-items: center !important;
 }
 
-.dataViewer {
+.currentView {
+  border-right: 1px black solid;
+  width: 46vw !important;
+}
+
+.dataView {
 }

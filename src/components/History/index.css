@@ -1,0 +1,41 @@
+.historyWrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #f9f4e1;
+  overflow-y: scroll;
+}
+
+.historyWrapper > * {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.historyCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.historyCard > p {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+.historyCardInner > button {
+  margin-right: 8px;
+  background-color: yellowgreen;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  padding: 4px;
+}
+
+.historyCardInner > button:hover {
+  cursor: pointer;
+}

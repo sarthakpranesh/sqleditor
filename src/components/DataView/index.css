@@ -10,6 +10,10 @@
   margin-left: 12px;
 }
 
+.dataViewWrapper > table {
+  margin-left: 0px;
+}
+
 table, th, td {
   border: 1px solid white;
   border-collapse: collapse;

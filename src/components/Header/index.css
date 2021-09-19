@@ -4,13 +4,14 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 80px;
-  background-color: #e7f4fc;
+  height: 60px;
+  background-color: #00A19D;
 }
 
-.navItemWrapper > h1 {
+.navItemWrapper > h3 {
   margin: 8px;
   margin-left: 22px;
+  color: white;
 }
 
 .navItemBtnContainer {
@@ -18,7 +19,7 @@
 }
 
 .navItemBtnContainer > button {
-  margin-right: 4px;
+  margin-right: 8px;
   background-color: yellowgreen;
   border: none;
   border-radius: 4px;

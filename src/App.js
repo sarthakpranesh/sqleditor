@@ -6,41 +6,66 @@ import Editor from './components/Editor';
 import DataView from './components/DataView';
 import executeQuery from './services/SQL/executeQuery';
 import checkQuery from "./services/SQL/checkQuery";
+import SideNavItem from "./components/SideNavItem";
+import History from "./components/History";
+import InitializeLocalStorage, { AddQueryToStorage } from "./services/storage/localStorage";
 
 const App = () => {
+  const [current, setCurrent] = React.useState("code");
   const [query, setQuery] = React.useState("");
   const [data, setData] = React.useState(null);
   const [error, setError] = React.useState(null);
 
-  const onRunQuery = () => {
-    const errs = checkQuery(query);
+  const onRunQuery = (q) => {
+    const errs = checkQuery(q);
     if (errs.length !== 0) {
       return setError(errs.join("\n"));
     }
-    const [rawData, err] = executeQuery(query);
-    console.log(rawData, err);
+    const [rawData, err] = executeQuery(q);
     if (err !== null) {
       setData(null);
       return setError(err);
     }
     setData(rawData);
     setError(null);
+    AddQueryToStorage(q);
   }
+
+  const renderCurrentView = () => {
+    if (current === "code") {
+      return <Editor query={query} setQuery={setQuery} />;
+    } else if (current === "history") {
+      return <History onRun={onRunQuery} />
+    }
+  }
+
+  React.useEffect(() => {
+    InitializeLocalStorage();
+  })
 
   return (
     <div className="App">
-      <Container className="sqlCommandEditor">
-        <Header title="SQL Editor" onRun={onRunQuery} onReset={() => {
-          setData(null);
-          setError(null);
-        }} />
-        <Editor query={query} setQuery={setQuery} />
+      <Container className="sideNav">
+        <SideNavItem name="code" onPress={() => setCurrent("code")} />
+        <SideNavItem name="history" onPress={() => setCurrent("history")} />
+        <SideNavItem name="settings" onPress={() => setCurrent("settings")} />
       </Container>
-      <Container className="dataViewer">
+      <Container className="currentView">
+        <Header
+          title={current}
+          onRun={() => onRunQuery(query)}
+          onReset={() => {
+            setData(null);
+            setError(null);
+          }}
+        />
+        {renderCurrentView()}
+      </Container>
+      <Container className="dataView">
         <DataView data={data} error={error} />
       </Container>
     </div>
-  );
+  )
 };
 
 export default App;
