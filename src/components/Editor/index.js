@@ -3,8 +3,10 @@ import * as React from "react";
 import "./index.css";
 import formatQuery from "../../services/SQL/formatQuery";
 
-const Editor = () => {
-  const [query, setQuery] = React.useState("");
+const Editor = ({
+  query,
+  setQuery
+}) => {
 
   const onQueryChange = (e) => {
     const unformattedQuery = e.target.value;
@@ -36,9 +38,7 @@ const Editor = () => {
         }}
         onChange={onQueryChange}
         value={query}
-      >
-
-      </textarea>
+      />
     </div>
   )
 }

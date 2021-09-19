@@ -3,7 +3,7 @@ const sqlKeywords = ["add", "constraint", "alter", "column", "table", "all", "an
 const formatQuery = (query) => {
   const queryArray = query.split(" ");
   const formattedQueryArray = queryArray.map((q, i) => {
-    if (sqlKeywords.includes(q) && i != queryArray.length - 1) {
+    if (sqlKeywords.includes(q.toLowerCase()) && i !== queryArray.length - 1) {
       return q.toUpperCase()
     }
     return q;
