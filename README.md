@@ -20,6 +20,9 @@ Some features are in `alpha` and others will be added in future
 
 <br />
 
+## Page Load Time
+Calculated load time using a `loading started` in head and `loading ended` when react's useEffect gets called after first render. Also used to [lighthouse]() for performance report. For improving performance multiple things where adopted including Code Splitting using React.lazy for screens and components not initially visible, structural changes, use of CDNs for icons, etc. 
+<br />
 ## Development
 Make sure you have `Nodejs` installed
 - `git clone https://github.com/sarthakpranesh/sqleditor.git`

@@ -7,8 +7,8 @@ import DataView from './components/DataView';
 import executeQuery from './services/SQL/executeQuery';
 import checkQuery from "./services/SQL/checkQuery";
 import SideNavItem from "./components/SideNavItem";
-import History from "./components/History";
 import InitializeLocalStorage, { AddQueryToStorage } from "./services/storage/localStorage";
+const History = React.lazy(() => import("./components/History"));
 
 const App = () => {
   const [current, setCurrent] = React.useState("code");
@@ -35,13 +35,19 @@ const App = () => {
     if (current === "code") {
       return <Editor query={query} setQuery={setQuery} />;
     } else if (current === "history") {
-      return <History onRun={onRunQuery} />
+      return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <History onRun={onRunQuery} />
+        </React.Suspense>
+      )
     }
   }
 
   React.useEffect(() => {
     InitializeLocalStorage();
-  })
+    const loadStop = new Date().getTime();
+    console.log("Page Load Time(s):", (loadStop - window.loadStart)/1000)
+  }, [])
 
   return (
     <div className="App">
