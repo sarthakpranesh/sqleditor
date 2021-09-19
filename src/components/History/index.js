@@ -31,7 +31,11 @@ const History = ({
                   const q = GetQueriesFromStorage()
                   setQueries(q);
                 }}>Run</button>
-                <button onClick={() => RemoveQueryFromStorage(i)} style={{backgroundColor: "red"}}>Delete</button>
+                <button onClick={() => {
+                  RemoveQueryFromStorage(i)
+                  const q = GetQueriesFromStorage()
+                  setQueries(q);
+                }} style={{backgroundColor: "red"}}>Delete</button>
               </div>
             </div>
           )
