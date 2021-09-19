@@ -21,7 +21,13 @@ Some features are in `alpha` and others will be added in future
 <br />
 
 ## Development
+Make sure you have `Nodejs` installed
+- `git clone https://github.com/sarthakpranesh/sqleditor.git`
+- `cd sqleditor`
+- `yarn install`
+- `yarn start`
 
 <br />
 
-## Future Feature Extensions
+## Issues
+For bugs/feature requests/discussions open a issue [here](https://github.com/sarthakpranesh/sqleditor/issues)
